@@ -37,11 +37,17 @@ async function greet() {
   width: 100%;
   height: 36px; 
   user-select: none;
+  /* macos 需要设置以下才行，不然标题栏的内容还是能选中 */
+  -webkit-user-select: none; 
   z-index: 2;
   display: flex;
   align-items: center;
   padding: 0 16px;
   font-weight: bold;
+  cursor: default;
+  span {
+    pointer-events: none;
+  }
 }
 .main {
   position: fixed;
